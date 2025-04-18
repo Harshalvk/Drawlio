@@ -1,0 +1,16 @@
+{
+  "name": "@repo/zod-schemas",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./validation": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc --b"
+  },
+  "dependencies": {
+    "zod": "^3.24.3",
+    "@repo/typescript-config": "workspace:*"
+  }
+}
