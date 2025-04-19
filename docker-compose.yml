@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  drawlio-postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    container_name: drawlio-postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=harshal
+      - PG_DATA=/data/postgres-drawlio
+    volumes:
+      - postgres-drawlio:/data/postgres-drawlio
+
+volumes:
+  postgres-drawlio:
