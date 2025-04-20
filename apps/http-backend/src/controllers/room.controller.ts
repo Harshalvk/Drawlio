@@ -50,4 +50,18 @@ const getRoomChats = async (req: Request, res: Response) => {
   });
 };
 
-export { createRoom, getRoomChats };
+const getRoom = async (req: Request, res: Response) => {
+  const slug = req.params.slug;
+
+  const room = await prisma.room.findUnique({
+    where: {
+      slug,
+    },
+  });
+
+  res.json({
+    room,
+  });
+};
+
+export { createRoom, getRoomChats, getRoom };
